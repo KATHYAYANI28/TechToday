@@ -1,5 +1,5 @@
 <p>
-<img src="https://github.com/DroidNinja/DevUpdates/blob/master/art/banner.png?raw=true"/>
+
 </p>
 
 <p>
@@ -8,7 +8,7 @@
 <img src="https://github.com/DroidNinja/DevUpdates/blob/master/art/dark_theme.png?raw=true"/>
 </p>
 
-DevUpdates
+TechToday
 =======
 
 An app that keeps you updated on Android Ecosystem from various different sources. Basically, news app for developer updates.
