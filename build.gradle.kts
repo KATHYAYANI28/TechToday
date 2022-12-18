@@ -1,15 +1,27 @@
-
 plugins {
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.android.lint) apply false
-    alias(libs.plugins.android.test) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.kapt) apply false
-    alias(libs.plugins.hilt) apply false
-    alias(libs.plugins.gms.googleServices) apply false
-    alias(libs.plugins.firebase.crashlytics) apply false
-    alias(libs.plugins.spotless)
+    id(Plugins.ANDROID_LIBRARY)
+    kotlin(Plugins.KOTLIN_ANDROID)
+    kotlin(Plugins.KOTLIN_KAPT)
+    id(Plugins.KOTLIN_PARCELIZE)
 }
 
-apply(from = file("gradle/dependency-graph.gradle"))
+android {
+    compileSdk = AndroidVersion.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdk = AndroidVersion.MIN_SDK_VERSION
+        targetSdk = AndroidVersion.TARGET_SDK_VERSION
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures{
+        viewBinding = true
+    }
+}
+
+dependencies {
+    testImplementation(Dependencies.AndroidTest.Junit)
+    androidTestImplementation(Dependencies.AndroidTest.TestExt)
+    androidTestImplementation(Dependencies.AndroidTest.TestRunner)
+    androidTestImplementation(Dependencies.AndroidTest.EspressoCore)
+}
